@@ -389,7 +389,7 @@ static void drawEntry(menuEntry_s* me, int off_x, int is_active) {
 
     if (is_active) {
         layoutobj = &themeCurrent.layoutObjects[ThemeLayoutId_MenuActiveEntryName];
-        if (layoutobj->visible) DrawTextTruncate(layoutobj->font, layoutobj->posStart[0], layoutobj->posStart[1], themeCurrent.textColor, tmpstr, layoutobj->size[0], "...");
+        if (layoutobj->visible) DrawTextTruncate(layoutobj->font, layoutobj->posStart[0], layoutobj->posStart[1], themeCurrent.textColor, me->name, layoutobj->size[0], "...");
 
         if (me->type != ENTRY_TYPE_FOLDER) {
             memset(tmpstr, 0, sizeof(tmpstr));
