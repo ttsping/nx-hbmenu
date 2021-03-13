@@ -239,7 +239,7 @@ void themeStartup(ThemePreset preset) {
             [ThemeLayoutId_ButtonAText] = {
                 .visible = true,
                 .posType = false,
-                .posStart = {1280 - 90 - 30 - 32, 720 - 47 + 24},
+                .posStart = {1280 - 90 - 30 - 32, 720 - 47 + 20},
                 .touchSize = {0, 25},
                 .font = interuiregular18,
             },
@@ -247,7 +247,7 @@ void themeStartup(ThemePreset preset) {
             [ThemeLayoutId_ButtonB] = {
                 .visible = true,
                 .posType = true,
-                .posStart = {-36, 0},
+                .posStart = {-36, 4},
                 .posEnd = {0},
                 .touchSize = {36, 25},
                 .font = fontscale7,
@@ -256,7 +256,7 @@ void themeStartup(ThemePreset preset) {
             [ThemeLayoutId_ButtonBText] = {
                 .visible = true,
                 .posType = true,
-                .posStart = {-90, 0},
+                .posStart = {-90, -4},
                 .touchSize = {0, 32},
                 .font = interuiregular18,
             },
@@ -264,35 +264,35 @@ void themeStartup(ThemePreset preset) {
             [ThemeLayoutId_ButtonY] = {
                 .visible = true,
                 .posType = true,
-                .posStart = {-36, 0},
+                .posStart = {-36, 4},
                 .font = fontscale7,
             },
 
             [ThemeLayoutId_ButtonYText] = {
                 .visible = true,
                 .posType = true,
-                .posStart = {-32, 0},
+                .posStart = {-32, -4},
                 .font = interuiregular18,
             },
 
             [ThemeLayoutId_ButtonM] = {
                 .visible = true,
                 .posType = true,
-                .posStart = {-36, 0},
+                .posStart = {-36, 4},
                 .font = fontscale7,
             },
 
             [ThemeLayoutId_ButtonMText] = {
                 .visible = true,
                 .posType = true,
-                .posStart = {-32, 0},
+                .posStart = {-32, -4},
                 .font = interuiregular18,
             },
 
             [ThemeLayoutId_ButtonX] = {
                 .visible = true,
                 .posType = true,
-                .posStart = {-36, 0},
+                .posStart = {-36, 4},
                 .touchSize = {36, 25},
                 .font = fontscale7,
             },
@@ -300,7 +300,7 @@ void themeStartup(ThemePreset preset) {
             [ThemeLayoutId_ButtonXText] = {
                 .visible = true,
                 .posType = true,
-                .posStart = {-40 + 8, 0},
+                .posStart = {-40 + 8, -4},
                 .touchSize = {0, 25},
                 .font = interuiregular18,
             },
