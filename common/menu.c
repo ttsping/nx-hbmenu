@@ -15,6 +15,8 @@ uint8_t *folder_icon_large, *folder_icon_small;
 uint8_t *invalid_icon_large, *invalid_icon_small;
 uint8_t *theme_icon_large, *theme_icon_small;
 
+bool g_skip_scan_other_dir = true;
+
 void computeFrontGradient(color_t baseColor, int height);
 
 void menuLoadFileassoc(void);
@@ -119,6 +121,14 @@ void menuHandleXButton(void) {
         menuEntry_s* me;
         for (i = 0, me = menu->firstEntry; i != menu->curEntry; i ++, me = me->next);
         toggleStarState(me);
+    }
+}
+
+void menuHandleZRButton(void) {
+    g_skip_scan_other_dir = !g_skip_scan_other_dir;
+    if (hbmenu_state != HBMENU_NETLOADER_ACTIVE && hbmenu_state != HBMENU_THEME_MENU)
+    {
+        menuScan(".");
     }
 }
 

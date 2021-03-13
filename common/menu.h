@@ -116,6 +116,7 @@ char *menuGetRootBasePath(void);
 
 void menuHandleAButton(void);
 void menuHandleXButton(void);
+void menuHandleZRButton(void);
 
 bool menuIsNetloaderActive(void);
 

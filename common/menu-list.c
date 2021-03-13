@@ -4,6 +4,8 @@ static menu_s s_menu[2];
 static menu_s s_menuFileassoc[2];
 static bool s_curMenu, s_curMenuFileassoc;
 
+extern bool g_skip_scan_other_dir;
+
 menu_s* menuGetCurrent(void) {
     return &s_menu[s_curMenu];
 }
@@ -192,7 +194,10 @@ int menuScan(const char* target) {
         #endif
 
         if (entrytype)
-            me = menuCreateEntry(ENTRY_TYPE_FOLDER);
+        {
+            if (!g_skip_scan_other_dir)
+                me = menuCreateEntry(ENTRY_TYPE_FOLDER);
+        }
         else
         {
             const char* ext = getExtension(dp->d_name);

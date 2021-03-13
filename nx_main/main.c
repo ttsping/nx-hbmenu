@@ -227,12 +227,17 @@ bool menuUpdate(void) {
     {
         launchMenuBackTask();
     }
-    else if(down & HidNpadButton_Minus){
+    else if(down & HidNpadButton_Minus)
+    {
         themeMenuStartup();
     }
     else if (down & HidNpadButton_Plus)
     {
         exitflag = 1;
+    }
+    else if (down & HidNpadButton_ZR)
+    {
+        menuHandleZRButton();
     }
     else if (menu->nEntries > 0)
     {
