@@ -195,8 +195,7 @@ int menuScan(const char* target) {
 
         if (entrytype)
         {
-            if (!g_skip_scan_other_dir)
-                me = menuCreateEntry(ENTRY_TYPE_FOLDER);
+            me = menuCreateEntry(ENTRY_TYPE_FOLDER);
         }
         else
         {
@@ -214,10 +213,15 @@ int menuScan(const char* target) {
         strncpy(me->path, tmp_path, sizeof(me->path)-1);
         me->path[sizeof(me->path)-1] = 0;
 
-        if (menuEntryLoad(me, dp->d_name, shortcut, true))
-            menuAddEntry(me);
-        else
-            menuDeleteEntry(me, 0);
+        if (menuEntryLoad(me, dp->d_name, shortcut, true)) 
+        {
+            if (!entrytype || !g_skip_scan_other_dir || me->starred) 
+            {
+                menuAddEntry(me);
+                continue;
+            }
+        }
+        menuDeleteEntry(me, 0);
     }
 
     closedir(dir);
